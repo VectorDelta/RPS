@@ -10,98 +10,98 @@ let log = console.log;
 log("Hello World");
 
 
-// Play the game until one of the players sides win
+// Play the game until one of the players sides win with 5 points
 while (humanScore < 5 && computerScore < 5) {
     playRound(getHumanChoice(), getComputerChoice());
     log(`
         The computerScore is: ${computerScore}
         The humanScore is: ${humanScore}
-        `)
+        `);
     
 }
 
 if(humanScore == 5)
 {
-    alert("Player Wins")
+    alert("Player Wins");
 }
 else
 {
-    alert("Computer Wins!")
+    alert("Computer Wins!");
 }
 
 
-// play a round with the given parameters given
+// play a round with the given parameters given within the function
 function playRound(humanChoice, computerOutput) {
     if (humanChoice === computerOutput) {
-        alert("Draw!")
+        alert("Draw!");
     }
     else if (humanChoice === "Rock" && computerOutput === "Scissors") {
-        alert("+1 Point to you!")
+        alert("+1 Point to you!");
         humanScore++;
     }
     else if (humanChoice === "Scissors" && computerOutput === "Rock") {
-        alert("+1 Point to the Computer!")
+        alert("+1 Point to the Computer!");
         computerScore++;
     }
     else if (humanChoice === "Paper" && computerOutput === "Rock") {
-        alert("+1 Point to you!")
+        alert("+1 Point to you!");
         humanScore++;
     }
     else if (humanChoice === "Rock" && computerOutput === "Paper") {
-        alert("+1 Point to the Machine!")
+        alert("+1 Point to the Machine!");
         computerScore++;
     }
     else if (humanChoice === "Scissors" && computerOutput === "Paper") {
-        alert("+1 Point to the player!")
+        alert("+1 Point to the player!");
         humanScore++;
     }
     else if (humanChoice === "Paper" && computerOutput === "Scissors") {
-        alert("+1 Point to V1!")
+        alert("+1 Point to V1!");
         computerScore++;
     }
 }
 
-// Get the choice of the computer
+// Get the choice of the computer within a Random generator and evaluates it
 function getComputerChoice() {
     let random = getRandomInt(3);
     switch (random) {
         case 0:
-            alert("Computer Rock")
-            return "Rock"
+            alert("Computer Rock");
+            return "Rock";
         case 1:
-            alert("Computer Scissors")
-            return "Scissors"
+            alert("Computer Scissors");
+            return "Scissors";
         case 2:
-            alert("Computer paper")
-            return "Paper"
+            alert("Computer paper");
+            return "Paper";
     }
 
 }
 
 
-// Get the choice for the player
+// Get the choice for the player within a prompt then evaluates it
 function getHumanChoice() {
     let userInput = prompt(
             `Options:
                 1. Rock
                 2. Paper
                 3. Scissors`
-        )
+        );
     switch (userInput) {
         case "1":
-            alert("Rock chosen!")
-            return "Rock"
+            alert("Rock chosen!");
+            return "Rock";
 
         case "2":
             alert("Paper chosen!");
-            return "Paper"
+            return "Paper";
 
         case "3":
-            alert("Scissors chosen!")
-            return "Scissors"
+            alert("Scissors chosen!");
+            return "Scissors";
 
         default:
-            alert(`Please enter the following option number ${userInput}`)
+            alert(`Please enter the following option number ${userInput}`);
     }
 }
 // Make a function to get an int with a max value of "max"
